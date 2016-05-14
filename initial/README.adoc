@@ -1,6 +1,9 @@
 == github技巧
+
 提交快捷键　push ctrl+shift+k
+
 == maven 元素的学习
+
 * groupId定义了项目属于哪个组，这个组往往和项目所在的组织或公司存在关联。譬如在googlecode上建立了一个名为myapp的项目，那么groupId就应该是com.googlecode.myapp
 * artifactId定义了当前maven项目在组中唯一的ID，如在前面的groupId为com.googlecode.myapp的例子中，你可能会为不同的子项目(模块)分配artifactId,如:myapp-util,myapp-domain,myapp-web等。
 * version指定了项目当前的版本--1.0-SNAPSHOT。SNAPSHOT意为快照，说明该项目还处于开发中，是不稳定的版本。
