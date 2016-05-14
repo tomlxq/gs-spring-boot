@@ -12,20 +12,16 @@
 若无互联网环境可搭建maven私服(nexus:http://www.sonatype.org/nexus/)
 依赖包借助http://mvnrepository.com这个网站来检索
 
-＃ 手动增加依赖包
+# 手动增加依赖包
 [source]
----
 mvn install:install-file -DgroupId=com.oracle "-DartifactId=ojdbc14"
 "-Dversion=10.2.0.2.0" "-Dpackaging=jar" "-Dfile=D:\ojdbc14.jar"
----
 
 此时在pom.xml用如下引入:
 
 [source]
----
 <dependency>
     <groupId>com.oracle</groupId>
     <artifactId>ojdbc14</artifactId>
     <version>10.2.0.2.0</version>
 </dependency>
----
