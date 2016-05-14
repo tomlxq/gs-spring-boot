@@ -1,6 +1,6 @@
 ---
-tag: [spring,spring boot,maven,github]
-project: [initial]
+tags: [spring,spring boot,maven,github]
+projects: [initial]
 ---
 ////
 markDown中的注释
