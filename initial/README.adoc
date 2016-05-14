@@ -8,8 +8,24 @@
 * artifactId定义了当前maven项目在组中唯一的ID，如在前面的groupId为com.googlecode.myapp的例子中，你可能会为不同的子项目(模块)分配artifactId,如:myapp-util,myapp-domain,myapp-web等。
 * version指定了项目当前的版本--1.0-SNAPSHOT。SNAPSHOT意为快照，说明该项目还处于开发中，是不稳定的版本。
 
-> maven是一个项目构建工具,利用maven我们不需要手工拷贝包到项目中,只需通过pom.xml文件里的包的描述自动从互联网下载相关依赖包
-
+> maven是一个项目构建工具,利用maven我们不需要手工拷贝包到项目中,只需通过pom.xml文件里的包的描述自动从互联网下载相关依赖包.
 若无互联网环境可搭建maven私服(nexus:http://www.sonatype.org/nexus/)
-
 依赖包借助http://mvnrepository.com这个网站来检索
+
+＃ 手动增加依赖包
+[source]
+---
+mvn install:install-file -DgroupId=com.oracle "-DartifactId=ojdbc14"
+"-Dversion=10.2.0.2.0" "-Dpackaging=jar" "-Dfile=D:\ojdbc14.jar"
+---
+
+此时在pom.xml用如下引入:
+
+[source]
+---
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>10.2.0.2.0</version>
+</dependency>
+---
