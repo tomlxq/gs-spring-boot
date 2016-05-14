@@ -1,1 +1,4 @@
+== maven 元素的学习
 * groupId定义了项目属于哪个组，这个组往往和项目所在的组织或公司存在关联。譬如在googlecode上建立了一个名为myapp的项目，那么groupId就应该是com.googlecode.myapp
+* artifactId定义了当前maven项目在组中唯一的ID，如在前面的groupId为com.googlecode.myapp的例子中，你可能会为不同的子项目(模块)分配artifactId,如:myapp-util,myapp-domain,myapp-web等。
+
