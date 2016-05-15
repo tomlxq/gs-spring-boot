@@ -30,7 +30,7 @@ mvn install:install-file -DgroupId=com.oracle "-DartifactId=ojdbc14"
 
 此时在pom.xml用如下引入:
 
-[source]
+[source,xml]
 <dependency>
     <groupId>com.oracle</groupId>
     <artifactId>ojdbc14</artifactId>
@@ -65,7 +65,7 @@ mvn install:install-file -DgroupId=com.oracle "-DartifactId=ojdbc14"
 
 jackson-dataformat-xml依赖jackson-bind,这样我们能同时返回xml和json
 
-[source]
+[source,xml]
 <dependency>
     <groupId>com.fasterxml.jackson.dataformat</groupId>
     <artifactId>jackson-dataformat-xml</artifactId>
@@ -73,7 +73,7 @@ jackson-dataformat-xml依赖jackson-bind,这样我们能同时返回xml和json
 </dependency>
 
 若只需返回json数据(大多数项目都是这样),将上面依赖更换为
-[source]
+[source,xml]
  <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
@@ -97,7 +97,7 @@ jackson-dataformat-xml依赖jackson-bind,这样我们能同时返回xml和json
 * 在控制器参数使用@RequestParam("file") MultipartFile[] files接受多个文件上传;
 
 > 通过配置MultipartResolver来配置文件上传的一些属性;
-[source]
+[source,java]
 @Bean
 public MultipartResolver multipartResolver() {
     CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
@@ -109,3 +109,56 @@ public MultipartResolver multipartResolver() {
 spring视图 ContentNegotiatingViewResolver
 http://wiselyman.iteye.com/blog/2214965
 ////
+### ContentNegotiatingViewResolver支持在Spring MVC下输出不同的格式;
+
+ContentNegotiatingViewResolver是ViewResolver的一个实现;
+
+ContentNegotiatingViewResolver使用request的媒体类型,根据扩展名选择不同的view输出不同的格式;
+
+ContentNegotiatingViewResolver不是自己处理view,而是代理给不同的ViewResolver来处理不同的view;
+
+* jsp
+
+> view:WEB-INF/views/demoObj.jsp
+> viewResolver:UrlBasedViewResolver或InternalResourceViewResolver
+
+* pdf
+
+> view:PdfView
+> viewResolver:PdfViewResolver
+
+* json
+
+> view:MappingJackson2JsonView
+> viewResolver:JsonViewResolver
+
+* xml
+
+> view:MarshallingView
+> viewResolver:XmlViewResolver
+
+* xls
+
+> view:XlsView
+> viewResolver:XlsViewResolver
+
+[source,xml]
+----
+<!--xml-->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-oxm</artifactId>
+</dependency>
+<!--pdf-->
+<dependency>
+    <groupId>com.lowagie</groupId>
+    <artifactId>itext</artifactId>
+    <version>4.2.1</version>
+</dependency>
+<!-- xls-->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.10-beta2</version>
+</dependency>
+----

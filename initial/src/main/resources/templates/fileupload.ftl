@@ -4,4 +4,5 @@
         <input type="file" name="file"/><br/>
         <input type="submit" value="上传">
     </form>
+</div>
 <#include "footer.ftl">

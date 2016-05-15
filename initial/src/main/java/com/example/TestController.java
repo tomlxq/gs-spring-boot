@@ -4,6 +4,7 @@ package com.example;
  * Created by tom on 2016/5/15.
  */
 
+import com.example.domain.Account;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
