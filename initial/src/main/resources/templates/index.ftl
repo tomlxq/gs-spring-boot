@@ -31,6 +31,9 @@
         //添加更多
         }
     </p>
+    <h1>自定义HttpMessageConverter</h1>
+    <p><label>msg converter: </label><a href="/msg-converter">msg converter</a></p>
+
 </div>
 <@jsMac/>
 

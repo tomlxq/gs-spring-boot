@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.converter.TomMessageConverter;
 import com.example.view.JsonViewResolver;
 import com.example.view.PdfViewResolver;
 import com.example.view.XlsViewResolver;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
@@ -91,6 +93,13 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/").setViewName("/index");
         registry.addViewController("/pushMessage").setViewName("/pushMessage");
         registry.addViewController("/fileupload").setViewName("/fileupload");
+        registry.addViewController("/msg-converter").setViewName("/converter");
         //添加更多
+    }
+
+    @Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        TomMessageConverter converter = new TomMessageConverter();
+        converters.add(converter);
     }
 }
