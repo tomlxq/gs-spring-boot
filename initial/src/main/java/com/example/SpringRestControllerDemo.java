@@ -26,5 +26,15 @@ public class SpringRestControllerDemo {
         return userDetails;
     }
 
+    @RequestMapping(value = "/getJson", produces = {"application/json;charset=UTF-8"})
+    public Account getJson() {
+        return new Account("tom", "123", "tomluo@gmail.com");
+    }
+
+    @RequestMapping(value = "/getXml", produces = {"application/xml;charset=UTF-8"})
+    public Account getXml() {
+        return new Account("tom", "123", "tomluo@gmail.com");
+    }
+
 
 }
