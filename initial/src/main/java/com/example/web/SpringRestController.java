@@ -1,10 +1,11 @@
-package com.example;
+package com.example.web;
 
 /**
  * Created by tom on 2016/5/15.
  */
 
 import com.example.domain.Account;
+import com.example.domain.UserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

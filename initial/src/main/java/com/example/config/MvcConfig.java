@@ -79,4 +79,18 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         resolver.setViewResolvers(resolvers);
         return resolver;
     }
+
+    //如果设置成configurer.setUseSuffixPatternMatch(false);
+    //contentNegotiatingViewResolver不能工作
+   /* @Override
+    public void configurePathMatch(PathMatchConfigurer configurer) {
+        configurer.setUseSuffixPatternMatch(false);
+    }*/
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("/index");
+        registry.addViewController("/pushMessage").setViewName("/pushMessage");
+        registry.addViewController("/fileupload").setViewName("/fileupload");
+        //添加更多
+    }
 }

@@ -1,4 +1,4 @@
-package com.example;
+package com.example.web;
 
 
 import org.apache.commons.io.FileUtils;
@@ -20,11 +20,11 @@ import java.io.IOException;
 public class UploadController extends BaseController {
     public static final String DIR = FilenameUtils.getPathNoEndSeparator(UploadController.class.getClassLoader().getResource("templates").getFile());
 
-
+/*
     @RequestMapping(value = "/upload", method = RequestMethod.GET)
     public String upload() {
         return "fileupload";
-    }
+    }*/
 
     //接受多个文件上传使用@RequestParam("file") MultipartFile[] files
     @RequestMapping(value = "/upload", method = RequestMethod.POST)

@@ -13,6 +13,10 @@ http://wiselyman.iteye.com/blog/2210250
 
 提交快捷键　push ctrl+shift+k
 
+== 热布署配置
+
+image::https://raw.githubusercontent.com/tomlxq/gs-spring-boot/master/doc/struts.png[热布署配置,500,link="https://raw.githubusercontent.com/tomlxq/gs-spring-boot/master/doc/struts.png"]
+
 == maven 元素的学习
 
 * groupId定义了项目属于哪个组，这个组往往和项目所在的组织或公司存在关联。譬如在googlecode上建立了一个名为myapp的项目，那么groupId就应该是com.googlecode.myapp
@@ -162,3 +166,55 @@ ContentNegotiatingViewResolver不是自己处理view,而是代理给不同的Vie
     <version>3.10-beta2</version>
 </dependency>
 ----
+
+### 配置路径匹配参数
+
+在spring MVC中路径参数如果带.的话,.后面的值将被忽略,本例演示配置configurePathMatch不忽略点后面的参数
+
+[source,java]
+----
+//http://localhost:8080/configPath/tomLuo.home
+//request value:tomLuo
+@RequestMapping("/configPath/{test}")
+public @ResponseBody
+String configPath(@PathVariable String test){
+    return "request value:"+test;
+}
+----
+
+在继承WebMvcConfigurerAdapter的DemoMVCConfig类中重载configurePathMatch
+
+[source,java]
+----
+//如果设置成configurer.setUseSuffixPatternMatch(false); request value:tomLuo.home
+//contentNegotiatingViewResolver不能工作
+@Override
+public void configurePathMatch(PathMatchConfigurer configurer) {
+    configurer.setUseSuffixPatternMatch(false);
+}
+----
+
+### 快捷定义ViewController
+
+我们经常涉及到页面转向,但没任何处理业务的时候,快捷的页面转向定义会节省好多代码;
+常规的方案是这样写的
+
+[source,java]
+----
+@RequestMapping(value = {"/", ""})
+public ModelAndView index() {
+    return new ModelAndView("index");
+}
+----
+
+在继承WebMvcConfigurerAdapter的DemoMVCConfig类中重载addViewControllers
+[source,java]
+----
+@Override
+public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/").setViewName("/index");
+    //添加更多
+}
+----
+
+hot-deployee.png

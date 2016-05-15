@@ -1,4 +1,4 @@
-package com.example;
+package com.example.domain;
 
 /**
  * Created by tom on 2016/5/15.
