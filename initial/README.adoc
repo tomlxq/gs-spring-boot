@@ -13,9 +13,11 @@ http://wiselyman.iteye.com/blog/2210250
 
 提交快捷键　push ctrl+shift+k
 
-== 热布署配置
+== hot deploy配置 节省调试时间
 
-image::https://raw.githubusercontent.com/tomlxq/gs-spring-boot/master/doc/struts.png[热布署配置,500,link="https://raw.githubusercontent.com/tomlxq/gs-spring-boot/master/doc/struts.png"]
+image::https://raw.githubusercontent.com/tomlxq/gs-spring-boot/master/doc/hot-deploy.png[热布署配置,500,link="https://raw.githubusercontent.com/tomlxq/gs-spring-boot/master/doc/hot-deploy.png"]
+
+> -javaagent:[your_path]\jrebel\jrebel.jar -Xmx512M -Xms512M -XX:MaxPermSize=1024m -noverify
 
 == maven 元素的学习
 
