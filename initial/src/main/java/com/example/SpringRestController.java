@@ -6,13 +6,10 @@ package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class SpringRestControllerDemo {
+public class SpringRestController {
     @Autowired
     UserDetails userDetails;
 
@@ -27,8 +24,8 @@ public class SpringRestControllerDemo {
     }
 
     @RequestMapping(value = "/getJson", produces = {"application/json;charset=UTF-8"})
-    public Account getJson() {
-        return new Account("tom", "123", "tomluo@gmail.com");
+    public Account getJson(@RequestBody Account body) {
+        return new Account(body.getName(), body.getPassword(), body.getEmail());
     }
 
     @RequestMapping(value = "/getXml", produces = {"application/xml;charset=UTF-8"})
