@@ -1,21 +1,11 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>Study spring boot</title>
-    <link href="/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
+<#include "header.ftl">
 <div class="container">
-
 
     value from inteceptor 处理耗时:${handleTime!}ms
     <h1>服务器消息推送</h1>
     <div id="msg_from_server"></div>
 </div>
-<script type="text/javascript" src="/webjars/jquery/2.1.1/jquery.min.js"></script>
+<@jsMac/>
 
 <script
         type="text/javascript">
@@ -65,5 +55,5 @@
         console.log("没有sse");
     }
 </script>
-</body>
-</html>
+<#include "footer.ftl">
+

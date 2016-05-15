@@ -8,9 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by tom on 2016/5/15.
  */
 @Controller
-public class HomeController {
+public class HomeController extends BaseController {
     @RequestMapping(value = {"/", ""})
     public ModelAndView index() {
         return new ModelAndView("index");
     }
+
 }
