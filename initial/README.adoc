@@ -97,11 +97,15 @@ jackson-dataformat-xml依赖jackson-bind,这样我们能同时返回xml和json
 * 在控制器参数使用@RequestParam("file") MultipartFile[] files接受多个文件上传;
 
 > 通过配置MultipartResolver来配置文件上传的一些属性;
-
-[source］
+[source]
 @Bean
 public MultipartResolver multipartResolver() {
     CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
     multipartResolver.setMaxUploadSize(1000000);//最大上传100Ｍ
     return multipartResolver;
 }
+
+////
+spring视图 ContentNegotiatingViewResolver
+http://wiselyman.iteye.com/blog/2214965
+////
