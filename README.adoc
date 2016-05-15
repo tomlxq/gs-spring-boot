@@ -10,3 +10,5 @@ projects: [spring boot 初探]
 = spring boot 初探
 
 include::initial/README.adoc[leveloffset=+1]
+
+NOTE: 失业啦，找工作啦，努力啦
