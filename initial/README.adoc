@@ -6,6 +6,8 @@ projects: [initial]
 markDown中的注释
 http://wiselyman.iteye.com/blog/2210250
 http://sivalabs.in/2015/11/developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot/
+http://sspai.com/25137
+http://www.jianshu.com/p/1e402922ee32/
 ////
 == github技巧
 
@@ -41,10 +43,10 @@ mvn install:install-file -DgroupId=com.oracle "-DartifactId=ojdbc14"
 * @RequestMapping是SpringMVC的核心注解,负责访问的url与调用方法之间的映射;
 * @RequestMapping可以放在类和方法上;
 
-*@RequestMapping的属性produces属性控制response返回的形式;*
-*@RequestMapping的属性method属性控制接受访问的类型*
+    *@RequestMapping的属性produces属性控制response返回的形式;*
+    *@RequestMapping的属性method属性控制接受访问的类型*
 * @ResponseBody(放在方法上或者返回值类型前)将方法参数放置在web body的body中(返回的不是页面而是你所控制的字符)
-*@RequestBody(放在方法参数前)将方法参数放置在web request的body中*
+    *@RequestBody(放在方法参数前)将方法参数放置在web request的body中*
 
 # produces的内容是指定返回的媒体类型让浏览器识别
 
