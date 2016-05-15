@@ -45,16 +45,37 @@ mvn install:install-file -DgroupId=com.oracle "-DartifactId=ojdbc14"
 
     *@RequestMapping的属性produces属性控制response返回的形式;*
     *@RequestMapping的属性method属性控制接受访问的类型*
+
 * @ResponseBody(放在方法上或者返回值类型前)将方法参数放置在web body的body中(返回的不是页面而是你所控制的字符)
+
     *@RequestBody(放在方法参数前)将方法参数放置在web request的body中*
 
-# produces的内容是指定返回的媒体类型让浏览器识别
+### produces的内容是指定返回的媒体类型让浏览器识别
 
 * 如返回text/plain的话,chrome浏览器下network显示Response的Content-Type:text/plain;
 * 如返回application/json的话,chrome浏览器下network显示Response的application/json;
 
-# REST支持的http method(通过@RequestMapping的method属性控制)
+### REST支持的http method(通过@RequestMapping的method属性控制)
 * POST:新增
 * GET:读取
 * PUT/PATCH:更新
 * DELETE:删除
+
+添加jackson依赖
+
+jackson-dataformat-xml依赖jackson-bind,这样我们能同时返回xml和json
+
+[source]
+<dependency>
+    <groupId>com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat-xml</artifactId>
+    <version>2.5.3</version>
+</dependency>
+
+若只需返回json数据(大多数项目都是这样),将上面依赖更换为
+[source]
+ <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.5.3</version>
+</dependency>
