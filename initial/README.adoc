@@ -219,6 +219,10 @@ public void addViewControllers(ViewControllerRegistry registry) {
 }
 ----
 
+////
+http://wiselyman.iteye.com/blog/2215737 不能工作
+////
+
 ### 配置HttpMessageConverter
 
 HttpMessageConverter是对http的request和response进行自动转换
