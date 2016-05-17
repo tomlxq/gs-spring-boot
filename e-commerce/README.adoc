@@ -1,5 +1,6 @@
 ////
 http://sivalabs.in/2015/11/developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot/
 https://github.com/sivaprasadreddy/jcart
+http://sivalabs.in/2015/11/jcart-requirements-analysis/
 ////
 === 计划中
