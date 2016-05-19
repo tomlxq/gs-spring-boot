@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mappers.LogMapper">
+    <!-- 添加日志记录 <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey><selectKey resultType="java.lang.Long" keyProperty="id" >
+            SELECT @@IDENTITY AS id
+        </selectKey>-->
+    <insert id="insertLog" parameterType="Log" useGeneratedKeys="true" keyProperty="id">
+
+
+        INSERT INTO log(userid,createdate,operation,content)
+        VALUES(#{userid},NOW(),#{operation},#{content})
+
+    </insert>
+    <select id="findLogById" resultType="Log">
+        select * from log WHERE id=#{id}
+    </select>
+
+</mapper>

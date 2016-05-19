@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+    <!-- 加入Aspectj配置 -->
+    <aop:aspectj-autoproxy/>
+    <bean id="logAspect" class="com.example.aop.LogAspect"/>
+
+    <!-- 发票业务逻辑对象 -->
+    <bean id="invoiceService" class="com.example.service.InvoiceServiceImpl"></bean>
+
+    <!-- 管理员业务逻辑对象 -->
+    <bean id="adminService" class="com.example.service.AdminServiceImpl"></bean>
+
+    <!-- 日志记录业务逻辑对象 -->
+    <bean id="logService" class="com.example.service.LogServiceImpl"></bean>
+
+</beans>

@@ -1,0 +1,18 @@
+////
+http://sivalabs.in/2016/03/springboot-working-with-mybatis/
+http://sivalabs.in/2016/03/springboot-working-with-mybatis/
+https://github.com/sivalabs?tab=repositories
+http://www.ibeifeng.cn/#
+利用Spring的AOP记录代码跟踪日志
+https://hacpai.com/article/1376231687617
+Spring AOP进行日志记录，管理
+http://blog.csdn.net/sd0902/article/details/8393770
+Spring AOP 实现业务日志记录
+http://blog.csdn.net/oathevil/article/details/7288867
+Spring AOP的日志记录
+http://www.cnblogs.com/jyh317/p/3875546.html
+ SpringAOP拦截Controller,Service实现日志管理(自定义注解的方式)
+http://blog.csdn.net/czmchen/article/details/42392985
+Spring AOP 完成日志记录
+http://hotstrong.iteye.com/blog/1330046
+////
