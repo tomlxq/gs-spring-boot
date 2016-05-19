@@ -16,3 +16,5 @@ http://blog.csdn.net/czmchen/article/details/42392985
 Spring AOP 完成日志记录
 http://hotstrong.iteye.com/blog/1330046
 ////
+
+= spring AOP 进行日志记录
