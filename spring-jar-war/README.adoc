@@ -108,8 +108,8 @@ image:../{base-root}/doc/hot-deploy.png[热布署]
 
 系统启动后我们会看到
 ### 打印出结果
-            Hell tomLuo!
 
+            Hell tomLuo!
             This is a web application, we will introduce how to convert spring boot jar for spring boot war
 
 > 源代码访问：  https://github.com/tomlxq/gs-spring-boot/spring-jar-war[https://github.com/tomlxq/gs-spring-boot/spring-jar-war]
