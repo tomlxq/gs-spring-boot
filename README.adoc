@@ -11,4 +11,8 @@ projects: [spring boot 初探]
 
 include::initial/README.adoc[leveloffset=+1]
 
+# 介绍如何将spring boot的项目由jar转成war包
+
+include::./spring-jar-war/README.adoc[leveloffset=+1]
+
 NOTE: 失业啦，找工作啦，努力啦

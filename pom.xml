@@ -10,5 +10,6 @@
         <module>initial</module>
         <module>e-commerce</module>
         <module>spring-aop-log</module>
+        <module>spring-jar-war</module>
     </modules>
 </project>
