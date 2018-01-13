@@ -14,6 +14,8 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.Method;
@@ -24,15 +26,13 @@ import java.util.Date;
  *
  * @author HotStrong
  */
-@Aspect
+//@Aspect
 public class LogAspect {
-
-    @Autowired
-    private LogService logService;//日志记录Service
-
+Logger logger= LoggerFactory.getLogger(LogAspect.class);
     @Autowired
     private InvoiceService invoiceService;//发票Service
-
+    @Autowired
+    private LogService logService;//LogService
     /**
      * 添加业务逻辑方法切入点
      */
@@ -63,7 +63,7 @@ public class LogAspect {
      */
     @AfterReturning(value = "insertServiceCall()", argNames = "rtv", returning = "rtv")
     public void insertServiceCallCalls(JoinPoint joinPoint, Object rtv) throws Throwable {
-
+        logger.debug("插入的日志记录");
         //获取登录管理员id
         Long adminUserId = logService.loginUserId();
 

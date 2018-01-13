@@ -7,4 +7,6 @@ import com.example.domain.Invoice;
  */
 public interface InvoiceMapper {
     Invoice getInvoiceById(Long id);
+
+    void insertInvoice(Invoice invoice);
 }

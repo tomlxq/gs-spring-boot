@@ -20,3 +20,7 @@ INSERT INTO invoice (id, no, salary) VALUES
   (2, '0002235', 7800),
   (3, '0002236', 7900),
   (4, '0002237', 12200);
+
+  insert into users(id, name, email) values(1,'Siva','siva@gmail.com');
+insert into users(id, name, email) values(2,'Prasad','prasad@gmail.com');
+insert into users(id, name, email) values(3,'Reddy','reddy@gmail.com');

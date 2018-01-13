@@ -8,12 +8,12 @@ import com.example.domain.Admin;
 import com.example.domain.Log;
 import com.example.mappers.LogMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 /**
  * 日志记录业务逻辑接口实现类
  */
+@Service
 public class LogServiceImpl implements LogService {
 
     @Autowired
@@ -33,23 +33,23 @@ public class LogServiceImpl implements LogService {
      */
     public Long loginUserId() {
 
-        if (SecurityContextHolder.getContext() == null) {
-            return null;
-        }
+       // if (SecurityContextHolder.getContext() == null) {
+       //     return null;
+       // }
 
-        if (SecurityContextHolder.getContext().getAuthentication() == null) {
-            return null;
-        }
+       // if (SecurityContextHolder.getContext().getAuthentication() == null) {
+       //     return null;
+       // }
 
-        UserDetails userDetails = (UserDetails) SecurityContextHolder
-                .getContext().getAuthentication().getPrincipal();
+      //  UserDetails userDetails = (UserDetails) SecurityContextHolder
+       //         .getContext().getAuthentication().getPrincipal();
 
-        if (userDetails == null) {
-            return null;
-        }
+       // if (userDetails == null) {
+       //     return null;
+       // }
 
         //获取登录管理员帐号名
-        String userName = userDetails.getUsername();
+        String userName = "tomLuo";//userDetails.getUsername();
 
         if (userName == null || userName.equals("")) {
             return null;

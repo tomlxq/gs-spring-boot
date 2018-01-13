@@ -9,6 +9,14 @@ public class Invoice extends IdEntity {
     String no;//序列号
     Date date;
     Float salary;
+    public Invoice() {
+
+    }
+    public Invoice(String no, Date date, Float salary) {
+        this.no=no;
+        this.date=date;
+        this.salary=salary;
+    }
 
     public Date getDate() {
         return date;

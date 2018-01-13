@@ -1,6 +1,6 @@
 logging:
   level:
-    org.springframework: INFO
+    org.springframework: DEBUG
     com.example: DEBUG
 spring:
   datasource:
@@ -17,5 +17,6 @@ spring:
 mybatis:
   typeAliasesPackage: com.example.domain
   mapperLocations: classpath*:**/mappers/*.xml
+
 
 

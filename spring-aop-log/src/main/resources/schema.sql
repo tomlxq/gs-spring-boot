@@ -1,3 +1,5 @@
+
+DROP DATABASE `spring-aop-log`;
 CREATE DATABASE `spring-aop-log`;
 USE `spring-aop-log`;
 
@@ -14,7 +16,7 @@ CREATE TABLE `admin` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
-
+DROP TABLE IF EXISTS invoice;
 CREATE TABLE `invoice` (
   `id`     BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `no`     VARCHAR(20)         NOT NULL DEFAULT ''
@@ -40,6 +42,15 @@ CREATE TABLE `log` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+DROP TABLE IF EXISTS USERS;
+
+CREATE TABLE users (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(100) NOT NULL,
+  email varchar(100) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
 
 
 
