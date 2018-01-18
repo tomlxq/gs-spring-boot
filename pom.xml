@@ -11,5 +11,9 @@
         <module>e-commerce</module>
         <module>spring-aop-log</module>
         <module>spring-jar-war</module>
+        <module>spring-boot-restful</module>
+        <module>spring-boot-properties</module>
+        <module>spring-boot-thymeleaf</module>
+        <module>spring-boot-paging</module>
     </modules>
 </project>

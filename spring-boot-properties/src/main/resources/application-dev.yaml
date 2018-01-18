@@ -1,0 +1,7 @@
+## 家乡属性 Dev
+home:
+  province: 四川
+  city: 乐山
+  desc: dev 我居住在 ${home.province} ${home.city}.
+user:
+  name: tomlxq
