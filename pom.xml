@@ -15,5 +15,11 @@
         <module>spring-boot-properties</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-paging</module>
+        <module>spring-boot-freemarker</module>
+        <module>spring-boot-exception</module>
+        <module>spring-boot-mybatis-annotation</module>
+        <module>spring-boot-mybatis-xml</module>
+        <module>spring-boot-permissioncontrol</module>
+
     </modules>
 </project>
