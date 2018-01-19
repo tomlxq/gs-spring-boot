@@ -13,7 +13,7 @@ import com.example.demo.service.UserService;
 /**
  * 用户控制层
  *
- * Created by bysocket on 18/09/2017.
+ * Created by tomlxq on 18/09/2017.
  */
 @RestController
 @RequestMapping(value = "/users")     // 通过这里配置使下面的映射都在 /users

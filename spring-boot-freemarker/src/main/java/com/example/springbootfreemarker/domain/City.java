@@ -3,7 +3,7 @@ package com.example.springbootfreemarker.domain;
 /**
  * 城市实体类
  *
- * Created by bysocket on 07/02/2017.
+ * Created by tomlxq on 07/02/2017.
  */
 public class City {
 

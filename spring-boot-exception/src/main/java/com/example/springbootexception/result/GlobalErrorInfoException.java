@@ -3,7 +3,7 @@ package com.example.springbootexception.result;
 /**
  * 统一错误码异常
  *
- * Created by bysocket on 14/03/2017.
+ * Created by tomlxq on 14/03/2017.
  */
 public class GlobalErrorInfoException extends Exception {
 
