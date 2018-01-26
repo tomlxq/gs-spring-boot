@@ -20,6 +20,6 @@
         <module>spring-boot-mybatis-annotation</module>
         <module>spring-boot-mybatis-xml</module>
         <module>spring-boot-permissioncontrol</module>
-
+        <module>spring-boot-microservice-simple-provider-user</module>
     </modules>
 </project>
