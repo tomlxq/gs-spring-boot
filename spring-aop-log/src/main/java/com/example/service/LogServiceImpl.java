@@ -33,20 +33,20 @@ public class LogServiceImpl implements LogService {
      */
     public Long loginUserId() {
 
-       // if (SecurityContextHolder.getContext() == null) {
-       //     return null;
-       // }
+        // if (SecurityContextHolder.getContext() == null) {
+        //     return null;
+        // }
 
-       // if (SecurityContextHolder.getContext().getAuthentication() == null) {
-       //     return null;
-       // }
+        // if (SecurityContextHolder.getContext().getAuthentication() == null) {
+        //     return null;
+        // }
 
-      //  UserDetails userDetails = (UserDetails) SecurityContextHolder
-       //         .getContext().getAuthentication().getPrincipal();
+        //  UserDetails userDetails = (UserDetails) SecurityContextHolder
+        //         .getContext().getAuthentication().getPrincipal();
 
-       // if (userDetails == null) {
-       //     return null;
-       // }
+        // if (userDetails == null) {
+        //     return null;
+        // }
 
         //获取登录管理员帐号名
         String userName = "tomLuo";//userDetails.getUsername();

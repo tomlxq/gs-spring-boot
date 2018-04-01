@@ -13,16 +13,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootMicroserviceSimpleProviderUserApplicationTests {
-	@Autowired
-	private UserRepository repository;
-	@Test
-	public void contextLoads() {
-	}
+    @Autowired
+    private UserRepository repository;
+
+    @Test
+    public void contextLoads() {
+    }
 
 
-	@Test
-	public void test(){
-		User u = repository.findOne(1L);
-		Assert.assertEquals("成功的测试用例", "张三", u.getName());
-	}
+    @Test
+    public void test() {
+        User u = repository.findOne(1L);
+        Assert.assertEquals("成功的测试用例", "张三", u.getName());
+    }
 }

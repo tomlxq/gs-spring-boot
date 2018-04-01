@@ -25,25 +25,31 @@
         <div class="form-group">
             <label for="user_name" class="col-sm-2 control-label">名称:</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" id="user_name" name="name" th:value="${validUser.name}" th:field="*{validUser.name}" />
+                <input type="text" class="form-control" id="user_name" name="name" th:value="${validUser.name}"
+                       th:field="*{validUser.name}"/>
             </div>
-            <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('validUser.name')}" th:errors="*{validUser.name}">姓名有误!</label>
+            <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('validUser.name')}"
+                   th:errors="*{validUser.name}">姓名有误!</label>
         </div>
 
         <div class="form-group">
             <label for="user_age" class="col-sm-2 control-label">年龄:</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" id="user_age" name="age" th:value="${validUser.age}" th:field="*{validUser.age}" />
+                <input type="text" class="form-control" id="user_age" name="age" th:value="${validUser.age}"
+                       th:field="*{validUser.age}"/>
             </div>
-            <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('validUser.age')}" th:errors="*{validUser.age}">年龄有误!</label>
+            <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('validUser.age')}"
+                   th:errors="*{validUser.age}">年龄有误!</label>
         </div>
 
         <div class="form-group">
             <label for="user_birthday" class="col-sm-2 control-label">出生日期:</label>
             <div class="col-xs-4">
-                <input type="date" class="form-control" id="user_birthday" name="birthday" th:value="${validUser.birthday}" th:field="*{validUser.birthday}"/>
+                <input type="date" class="form-control" id="user_birthday" name="birthday"
+                       th:value="${validUser.birthday}" th:field="*{validUser.birthday}"/>
             </div>
-            <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('validUser.birthday')}" th:errors="*{validUser.birthday}">生日有误!</label>
+            <label class="col-sm-2 control-label text-danger" th:if="${#fields.hasErrors('validUser.birthday')}"
+                   th:errors="*{validUser.birthday}">生日有误!</label>
         </div>
 
         <div class="form-group">

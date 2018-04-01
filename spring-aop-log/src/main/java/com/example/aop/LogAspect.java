@@ -28,11 +28,12 @@ import java.util.Date;
  */
 //@Aspect
 public class LogAspect {
-Logger logger= LoggerFactory.getLogger(LogAspect.class);
+    Logger logger = LoggerFactory.getLogger(LogAspect.class);
     @Autowired
     private InvoiceService invoiceService;//发票Service
     @Autowired
     private LogService logService;//LogService
+
     /**
      * 添加业务逻辑方法切入点
      */

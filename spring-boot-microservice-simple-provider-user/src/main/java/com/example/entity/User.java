@@ -3,6 +3,7 @@ package com.example.entity;
 /**
  * Created by tom on 2018/1/26.
  */
+
 import java.math.BigDecimal;
 
 import javax.persistence.Column;

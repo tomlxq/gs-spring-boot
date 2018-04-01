@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
 /**
  * User: TOM
  * Date: 2016/5/20
@@ -16,11 +17,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * Time: 9:19
  */
 @Configuration
-@ComponentScan(basePackages = { "com.example.web" }, useDefaultFilters = false, includeFilters = @Filter({ Controller.class }))
+@ComponentScan(basePackages = {"com.example.web"}, useDefaultFilters = false, includeFilters = @Filter({Controller.class}))
 @EnableWebMvc
-public class WebMvcConfig extends WebMvcConfigurerAdapter
-{
-    Logger logger= LoggerFactory.getLogger(WebMvcConfig.class);
+public class WebMvcConfig extends WebMvcConfigurerAdapter {
+    Logger logger = LoggerFactory.getLogger(WebMvcConfig.class);
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("/index");

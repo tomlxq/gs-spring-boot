@@ -12,14 +12,15 @@ import java.net.URL;
  */
 public class TestJarOrder {
     protected static Logger logger = LoggerFactory.getLogger(DemoInterceptor.class);
+
     public static void main(String[] args) throws UnsupportedEncodingException {
         System.out.println("bootstrap classloader \n");
         //获得bootstrap classloader加载了那些核心类库
-        URL[] urls=sun.misc.Launcher.getBootstrapClassPath().getURLs();
+        URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
         for (int i = 0; i < urls.length; i++) {
             System.out.println(urls[i].toExternalForm());
         }
-        System.out.println("extension classloader\n" );
+        System.out.println("extension classloader\n");
         /**
          * extension classloader －扩展类加载器，它负责加载JRE的扩展目录（JAVA_HOME/jre/lib/ext或者由java.ext.dirs系统属性指定的）中JAR的类包。
          * 这为引入除Java核心类以外的新功能提供了一个标准机制。
@@ -27,8 +28,8 @@ public class TestJarOrder {
          * 所以放入这个目录的 JAR类包对所有的JVM和system classloader都是可见的。
          */
         System.out.println(System.getProperty("java.ext.dirs"));
-        ClassLoader extensionClassloader=ClassLoader.getSystemClassLoader().getParent();
-        System.out.println("the parent of extension classloader : "+extensionClassloader.getParent());
+        ClassLoader extensionClassloader = ClassLoader.getSystemClassLoader().getParent();
+        System.out.println("the parent of extension classloader : " + extensionClassloader.getParent());
         System.out.println("system classloader \n");
         /**
          * system classloader －系统（也称为应用）类加载器，
@@ -39,13 +40,11 @@ public class TestJarOrder {
         System.out.println(System.getProperty("java.class.path"));
 
 
-
-
         oracle.jdbc.driver.OracleDriver od = new oracle.jdbc.driver.OracleDriver();
 //            OracleDriver od = new OracleDriver();
-        URL url=od.getClass().getProtectionDomain().getCodeSource().getLocation();
-        String dbpath = java.net.URLDecoder.decode(url.toString(),"UTF-8");
-        logger.debug("OracleDriver path"+ url);
-        logger.debug("dbpath "+dbpath);
+        URL url = od.getClass().getProtectionDomain().getCodeSource().getLocation();
+        String dbpath = java.net.URLDecoder.decode(url.toString(), "UTF-8");
+        logger.debug("OracleDriver path" + url);
+        logger.debug("dbpath " + dbpath);
     }
 }

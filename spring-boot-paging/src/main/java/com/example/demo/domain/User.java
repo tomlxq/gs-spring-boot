@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 用户实体类
- *
+ * <p>
  * Created by tomlxq on 18/09/2017.
  */
 @Entity
