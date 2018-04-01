@@ -23,10 +23,3 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-.mvn/*
-/*/.mvn/wrapper
-/*/mvnw
-/*/mvnw.cmd
-/mvnw
-/mvnw.cmd
-/spring-boot-mybatis/logs/*.log

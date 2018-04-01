@@ -15,4 +15,12 @@ include::initial/README.adoc[leveloffset=+1]
 
 include::./spring-jar-war/README.adoc[leveloffset=+1]
 
-NOTE: 失业啦，找工作啦，努力啦
+
+Eureka Client: 服务注册
+Eureka Server：服务发现
+Robbin/Fein: 基于客户端的负载均衡
+Hystrix：熔断器，当服务不可用时，快速返回结果，避免请求阻塞
+Zuul：API网关，路由、认证、监控、...
+Cloud Config：配置管理，可以是本地文件、远程git源、...
+Cloud Bus：集群消息总线，可以传播配置
+总体流程：Eureka Client把service注册到Eureka Server上，通过Cloud Config和Cloud Bus管理service配置，外部/内部访问service时，先经过Zuul，路由到对应的Ribbon或Fein，Ribbon或Fein负载到对应的service，返回结果，如果service不可用，则快速返回错误状态。
