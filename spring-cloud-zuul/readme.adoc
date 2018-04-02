@@ -1,0 +1,19 @@
+java -jar app.jar --spring.profiles.active=dev
+
+jenkins已经足够完善了，推荐使用jenkins来部署Spring Boot项目，会省非常多的事情
+
+1、外部或者内部的非Spring Cloud项目都统一通过API网关（Zuul）来访问内部服务.
+2、网关接收到请求后，从注册中心（Eureka）获取可用服务
+3、由Ribbon进行均衡负载后，分发到后端的具体实例
+4、微服务之间通过Feign进行通信处理业务
+5、Hystrix负责处理服务超时熔断
+6、Turbine监控服务间的调用和熔断相关指标
+
+
+依次执行下面命令
+
+#打包
+mvn clean package
+# 分别以peer1和peeer2 配置信息启动eureka
+java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2

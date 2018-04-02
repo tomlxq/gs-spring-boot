@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: spring-cloud-eureka
+  profiles: peer2
+server:
+  port: 8002
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8000/eureka/,http://peer3:8002/eureka/

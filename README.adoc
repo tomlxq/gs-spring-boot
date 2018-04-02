@@ -24,3 +24,46 @@ Zuul：API网关，路由、认证、监控、...
 Cloud Config：配置管理，可以是本地文件、远程git源、...
 Cloud Bus：集群消息总线，可以传播配置
 总体流程：Eureka Client把service注册到Eureka Server上，通过Cloud Config和Cloud Bus管理service配置，外部/内部访问service时，先经过Zuul，路由到对应的Ribbon或Fein，Ribbon或Fein负载到对应的service，返回结果，如果service不可用，则快速返回错误状态。
+
+
+
+微服务　
+api网关zuul
+redis
+配置器
+熔断器
+服务注册与发现
+
+spring boot
+spring cloud用来治理微服务
+前端:
+	Bootstrap
+	Thymeleaf
+	jQuery
+	HTML5
+	JavaScript
+后端:
+	Spring Boot
+	Spring MVC
+	Spring Data
+	Apache HttpClient
+	Quartz Scheduler
+微服服务管理
+	Eureka Server
+	Eureka Client
+	Ribbon
+	OpenFeign
+	Zuul
+	Config Server
+	Config Client
+	Hystrix 服务器熔断
+数据处理
+	XML解析
+	JSON序列化
+	Redis
+
+分别以peer1、peer2、peer3的配置参数启动eureka注册中心。
+java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer3
+可以在peer1中看到了peer2、peer3的相关信息。至此eureka集群也已经完成了
