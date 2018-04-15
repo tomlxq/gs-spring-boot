@@ -1,0 +1,20 @@
+= 用 Spring REST Docs 构建文档
+
+This is an example output for a service running at http://localhost:8080:
+
+.request
+include::{snippets}/home/http-request.adoc[]
+
+.response
+include::{snippets}/home/http-response.adoc[]
+
+这个例子非常简单，通过单元测试和一些简单的配置就能够得到api文档了。
+
+adoc的书写格式，参考:http://docs.spring.io/spring-restdocs/docs/current/reference/html5/，这里不多讲解。
+
+需要使用asciidoctor-maven-plugin插件，在其pom文件加上：
+
+
+
+这时只需要通过mvnw package命令就可以生成文档了。
+在/target/generated-docs下有个index.html，打开这个html,显示如下，界面还算简洁：
