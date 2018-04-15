@@ -1,4 +1,4 @@
-package com.example.demo.web;
+package com.example.web;
 
 
 import com.example.demo.domain.ValidUser;

@@ -30,4 +30,5 @@ nbdist/
 /mvnw
 /mvnw.cmd
 /*/logs/*.log
-/spring-boot-jdbc-template/*.gitignore
+/*/*.gitignore
+
