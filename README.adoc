@@ -67,3 +67,6 @@ java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
 java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
 java -jar eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer3
 可以在peer1中看到了peer2、peer3的相关信息。至此eureka集群也已经完成了
+
+mongdb(未完成)
+docker(未完成)

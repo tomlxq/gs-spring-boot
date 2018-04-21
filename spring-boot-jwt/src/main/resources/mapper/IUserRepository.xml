@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.IUserRepository">
+    <resultMap id="BaseResultMap" type="com.example.entity.User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <collection property="roles" column="id" javaType="ArrayList"
+                    ofType="java.lang.String" select="getRoleByID"/>
+    </resultMap>
+
+    <resultMap id="RoleResultMap" type="com.example.entity.Role">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+    </resultMap>
+
+    <select id="getRoleByID" resultMap="RoleResultMap" parameterType="java.lang.String" >
+    select name
+    from role
+    where id = #{id}
+</select>
+
+    <sql id="Base_Column_List">
+        id, username, password
+    </sql>
+    <select id="findByUsername" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM users2 where username=#{username}
+    </select>
+
+    <insert id="insert" parameterType="com.example.entity.User">
+        INSERT INTO
+        users2
+        (id,username,password)
+        VALUES
+        (#{id},#{username}, #{password})
+        ON DUPLICATE KEY UPDATE password=VALUES(password)
+    </insert>
+    <insert id="insertUserRole" parameterType="com.example.entity.UserRole">
+        INSERT INTO
+        user_role
+        (user_id,role_id)
+        VALUES
+        (#{userId},#{roleId})
+        ON DUPLICATE KEY UPDATE user_id=VALUES(user_id),role_id=VALUES(role_id)
+    </insert>
+    <insert id="insertRole" parameterType="com.example.entity.Role">
+        INSERT INTO
+        role
+        (id,name)
+        VALUES
+        (#{id},#{name})
+         ON DUPLICATE KEY UPDATE name=VALUES(name)
+    </insert>
+
+</mapper>
