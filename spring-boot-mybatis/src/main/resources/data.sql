@@ -27,3 +27,29 @@ CREATE TABLE `account` (
 INSERT INTO `account` VALUES ('1', 'aaa', '1000');
 INSERT INTO `account` VALUES ('2', 'bbb', '1000');
 INSERT INTO `account` VALUES ('3', 'ccc', '1000');
+
+DROP TABLE IF EXISTS  `student_t`;
+CREATE TABLE student_t
+(
+  stuno INT PRIMARY KEY,
+  stuname VARCHAR(20),
+  stuage INT,
+  stuaddress VARCHAR(20) ,
+  classid INT
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS  `class_t`;
+CREATE TABLE class_t
+(
+  classid INT PRIMARY KEY,
+  classname VARCHAR(20)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+insert into student_t values (1,'tom',18,'广东深圳',1);
+insert into student_t values (2,'jack',18,'广东深圳',1);
+insert into student_t values (3,'rose',18,'广东深圳',1);
+
+insert into class_t values (1,'政治');
+insert into class_t values (2,'音乐');
+insert into class_t values (3,'绘画');
+insert into class_t values (4,'历名');
+insert into class_t values (5,'语文');
