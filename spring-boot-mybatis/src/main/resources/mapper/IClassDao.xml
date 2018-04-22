@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.dao.IClassDao" >
-
+    <!--查询ClazzEntity中的学生信息列表StudentEntity，
+    通过mybatis中的collection标签来配置，
+    其中，ofType是查询返回的学生信息对应的实体类，
+    select为要执行的查询学生列表的查询语句-->
     <resultMap id="ClazzResultMap" type="com.example.vo.ClazzEntity" >
         <id column="classID" property="clazzID" jdbcType="INTEGER" />
         <result column="className" property="clazzName" jdbcType="VARCHAR" />
